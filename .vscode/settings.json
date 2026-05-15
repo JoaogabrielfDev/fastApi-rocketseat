@@ -1,0 +1,16 @@
+{
+    "python.linting.enable": true,
+    "python.linting.pylintenable": true,
+    "files.exclude": {
+        "**/*.pyc": {"when": "$(basename).py"},
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+
+        // "**/.git": true,
+        // "**/.svn": true,
+        // "**/.hg": true,
+        // "**/.DS_Store": true,
+        // "**/Thumbs.db": true
+    }
+
+}
