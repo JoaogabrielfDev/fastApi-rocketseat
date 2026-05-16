@@ -9,3 +9,5 @@
 * Async
 * pydantic
 * SQlite 3
+* SQLAlchemy
+* Pytest
