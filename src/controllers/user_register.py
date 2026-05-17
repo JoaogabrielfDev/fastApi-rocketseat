@@ -14,13 +14,13 @@ class UserRegister:
         uf = user_data["uf"].upper()
 
         if uf not in ["MG", "BA", "CE", "SC", "MT"]:\
-            raise Exception("Estado Invalido para cadastro")
+            raise Exception("Estado Invalido para Cadastro")
         
         if age < 0 or age > 120:
             raise Exception("Idade Invalida para Cadastro")
         
     async def __registry_user(self, user_data: dict) -> None:
-        self.__users_repository.insert_users(user_data)
+        await self.__users_repository.insert_users(user_data)
 
     def __format__response(self, user_data: dict) -> dict:
         return {
