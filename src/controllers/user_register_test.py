@@ -1,5 +1,6 @@
 # pylint:disable = C1803
 from .user_register import UserRegister
+from src.errors.types.http_bad_request_error import HttpBadRequestError
 import pytest
 
 class UserRepostoryMock:
@@ -45,7 +46,7 @@ async def test_register_user_error_uf():
         "uf": "ES"
     }
 
-    with pytest.raises(Exception) as excinfo:
+    with pytest.raises(HttpBadRequestError) as excinfo:
         await user_register.register_user(invalid_uf_user_data)
     
     assert str(excinfo.value) == "Estado Invalido para Cadastro"
@@ -63,7 +64,7 @@ async def test_register_user_error_age():
         "uf": "MG"
     }
 
-    with pytest.raises(Exception) as excinfo:
+    with pytest.raises(HttpBadRequestError) as excinfo:
         await user_register.register_user(invalid_uf_user_data)
     
     assert str(excinfo.value) == "Idade Invalida para Cadastro"
